@@ -1,0 +1,8 @@
+from typing import List
+
+def maximumProduct(nums: List[int]) -> int:
+    nums.sort(reverse=True)
+    if max(nums) < 0 or min(nums) > 0:
+        return nums[0] * nums[1] * nums[2]
+    else:
+        return max(nums[-1]*nums[-2]*nums[0] , nums[0]*nums[1]*nums[2])
